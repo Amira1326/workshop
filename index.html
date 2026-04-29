@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: 
-        radial-gradient(circle at 10% 20%, rgba(249, 202, 36, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(106, 176, 76, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 10% 20%, rgba(249, 202, 36, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(106, 176, 76, 0.12) 0%, transparent 40%),
         linear-gradient(135deg, #fff9e6 0%, #f0f7ff 100%);
     min-height: 100vh;
     padding: 20px;
@@ -28,12 +28,12 @@ body {
 .particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .particle { 
     position: absolute; width: 8px; height: 8px; border-radius: 50%; opacity: 0.3;
-    animation: float 10s infinite ease-in-out; 
+    animation: float 12s infinite ease-in-out; 
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-50px) translateX(20px); }
+    0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+    50% { transform: translateY(-40px) translateX(15px) scale(1.2); }
 }
 
 /* 📦 Main Page Container */
@@ -43,72 +43,75 @@ body {
     max-width: 1100px;
     margin: 40px auto;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-    padding: 50px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08);
+    padding: 60px 40px;
     animation: fadeIn 0.8s ease-out;
 }
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 /* 🏰 Header */
-.header-section { text-align: center; margin-bottom: 50px; }
+.header-section { text-align: center; margin-bottom: 55px; }
 
 .logo-section {
     display: inline-flex;
     align-items: center;
     background: white;
-    padding: 15px 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    margin-bottom: 35px;
     gap: 20px;
+    border: 1px solid #f8f8f8;
 }
 
-.kids-gate-logo { width: 90px; height: auto; animation: bounce 3s infinite ease-in-out; }
+.kids-gate-logo { width: 95px; height: auto; animation: bounce 3s infinite ease-in-out; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-.brand-name { font-family: 'Fredoka One', cursive; font-size: 32px; color: #333; }
-.brand-subtitle { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.brand-name { font-family: 'Fredoka One', cursive; font-size: 34px; color: #2d3436; }
+.brand-subtitle { font-size: 11px; color: #95a5a6; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
 
 /* 🎨 Animated Title */
 .certificate-title {
     font-family: 'Fredoka One', cursive;
-    font-size: clamp(35px, 8vw, 60px);
-    margin: 20px 0;
-    letter-spacing: 2px;
+    font-size: clamp(38px, 8vw, 65px);
+    margin: 15px 0;
+    letter-spacing: 3px;
 }
-.letter { display: inline-block; transition: 0.3s; cursor: default; }
-.letter:hover { transform: scale(1.3) rotate(5deg); text-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.letter { display: inline-block; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: default; }
+.letter:hover { transform: scale(1.4) rotate(8deg); text-shadow: 0 15px 25px rgba(0,0,0,0.15); }
 
 .workshop-banner {
     display: inline-block;
-    background: #6ab04c;
+    background: linear-gradient(135deg, #6ab04c, #7dc55a);
     color: white;
-    padding: 8px 25px;
+    padding: 10px 30px;
     border-radius: 50px;
     font-weight: 800;
     margin-top: 15px;
-    box-shadow: 0 5px 15px rgba(106, 176, 76, 0.3);
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(106, 176, 76, 0.25);
 }
 
 /* 🎴 QR Grid */
 .qr-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .qr-card {
     background: white;
-    border-radius: 30px;
-    padding: 30px 20px;
+    border-radius: 35px;
+    padding: 35px 25px;
     text-align: center;
-    border: 1px solid #f0f0f0;
+    border: 1.5px solid #f5f5f5;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -117,23 +120,24 @@ body {
 .qr-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 6px;
+    top: 0; left: 0; width: 100%; height: 7px;
 }
 
 .qr-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border-color: transparent;
 }
 
 /* Shine effect on hover */
 .qr-card::after {
     content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
-    transform: rotate(45deg); transition: 0.6s; opacity: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform: rotate(45deg); transition: 0.7s; opacity: 0;
 }
 .qr-card:hover::after { left: 100%; top: 100%; opacity: 1; }
 
-/* Card Colors */
+/* Card Categories & Colors */
 .card-1::before { background: #e74c3c; }
 .card-2::before { background: #f39c12; }
 .card-3::before { background: #3498db; }
@@ -142,52 +146,62 @@ body {
 .card-6::before { background: #e67e22; }
 .card-7::before { background: #16a085; }
 
-.card-logo { width: 70px; height: 70px; object-fit: contain; margin-bottom: 15px; }
-.card-title { font-family: 'Fredoka One', cursive; font-size: 22px; margin-bottom: 5px; }
-.card-category { font-size: 11px; font-weight: 800; color: #95a5a6; text-transform: uppercase; margin-bottom: 20px; display: block;}
+.card-logo { width: 75px; height: 75px; object-fit: contain; margin-bottom: 18px; }
+.card-title { font-family: 'Fredoka One', cursive; font-size: 24px; margin-bottom: 6px; color: #2d3436; }
+.card-category { font-size: 10px; font-weight: 800; color: #b2bec3; text-transform: uppercase; margin-bottom: 22px; display: block; letter-spacing: 1.5px;}
 
 .qr-container {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 20px;
+    background: #fafafa;
+    padding: 18px;
+    border-radius: 22px;
     display: inline-block;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
+    margin-bottom: 22px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
 }
+.qr-card:hover .qr-container { transform: scale(1.05); }
 
 .card-link {
-    display: block;
+    display: inline-block;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 10px;
-    border-radius: 12px;
-    transition: 0.3s;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 1.5px solid currentColor;
 }
-.card-1 .card-link { color: #e74c3c; border: 1px solid #e74c3c22; }
-.card-1 .card-link:hover { background: #e74c3c; color: white; }
-/* تكرار نفس النمط لبقية البطاقات للحفاظ على التناسق */
+
+/* Card Link hover styles */
+.card-1 .card-link { color: #e74c3c; } .card-1 .card-link:hover { background: #e74c3c; color: white; }
+.card-2 .card-link { color: #f39c12; } .card-2 .card-link:hover { background: #f39c12; color: white; }
+.card-3 .card-link { color: #3498db; } .card-3 .card-link:hover { background: #3498db; color: white; }
+.card-4 .card-link { color: #2ecc71; } .card-4 .card-link:hover { background: #2ecc71; color: white; }
+.card-5 .card-link { color: #9b59b6; } .card-5 .card-link:hover { background: #9b59b6; color: white; }
+.card-6 .card-link { color: #e67e22; } .card-6 .card-link:hover { background: #e67e22; color: white; }
+.card-7 .card-link { color: #16a085; } .card-7 .card-link:hover { background: #16a085; color: white; }
 
 /* 👥 Footer */
 .footer-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 2px dashed #eee;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px dashed #f0f0f0;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
     flex-wrap: wrap;
 }
 
-.presenter-item { text-align: center; }
-.presenter-name { font-family: 'Dancing Script', cursive; font-size: 24px; color: #2d3436; }
-.presenter-role { font-size: 10px; font-weight: 800; color: #aaa; text-transform: uppercase; }
+.presenter-item { text-align: center; transition: transform 0.3s ease; }
+.presenter-item:hover { transform: translateY(-5px); }
+.presenter-name { font-family: 'Dancing Script', cursive; font-size: 26px; font-weight: 700; color: #2d3436; margin-bottom: 4px;}
+.presenter-role { font-size: 10px; font-weight: 900; color: #b2bec3; text-transform: uppercase; letter-spacing: 1px;}
 
 /* 📱 Responsive */
-@media (max-width: 600px) {
-    .page { padding: 30px 20px; border-radius: 20px; }
-    .logo-section { flex-direction: column; text-align: center; }
-    .footer-section { flex-direction: column; gap: 20px; }
+@media (max-width: 768px) {
+    .page { padding: 40px 25px; margin: 20px; border-radius: 30px; }
+    .qr-grid { gap: 20px; }
+    .footer-section { gap: 30px; }
 }
 </style>
 </head>
@@ -195,29 +209,30 @@ body {
 
 <div class="particles">
     <div class="particle" style="background:#e74c3c; left:10%; top:20%;"></div>
-    <div class="particle" style="background:#3498db; left:80%; top:10%;"></div>
-    <div class="particle" style="background:#2ecc71; left:50%; top:80%;"></div>
+    <div class="particle" style="background:#f1c40f; left:85%; top:15%;"></div>
+    <div class="particle" style="background:#3498db; left:75%; top:85%;"></div>
+    <div class="particle" style="background:#2ecc71; left:5%; top:70%;"></div>
 </div>
 
 <div class="page">
     <header class="header-section">
         <div class="logo-section">
-            <img src="logo.png" alt="Kids Gate" class="kids-gate-logo">
-            <div class="brand-text">
+            <img src="logo.png" alt="Kids Gate Logo" class="kids-gate-logo">
+            <div style="text-align: left;">
                 <div class="brand-name">Kids Gate</div>
-                <div class="brand-subtitle">روضة أطفال وطفولة مبكرة</div>
+                <div class="brand-subtitle">Kindergarten & Early Childhood</div>
             </div>
         </div>
 
         <h1 class="certificate-title" id="certTitle"></h1>
         
-        <div class="workshop-banner">📅 29 أبريل 2026</div>
-        <p style="margin-top:20px; font-weight:700; color:#555;">المعلمة الرائدة بلمسة تقنية</p>
+        <div class="workshop-banner">📅 April 29, 2026</div>
+        <p style="margin-top:25px; font-weight:800; font-size: 18px; color:#576574;">Pioneering Teacher with a Digital Touch</p>
     </header>
 
     <div class="qr-grid">
         <div class="qr-card card-1">
-            <img src="nearpod.png" class="card-logo">
+            <img src="nearpod.png" alt="Nearpod" class="card-logo">
             <h3 class="card-title">Nearpod</h3>
             <span class="card-category">Interactive Lessons</span>
             <div class="qr-container" id="qr1"></div>
@@ -225,7 +240,7 @@ body {
         </div>
 
         <div class="qr-card card-2">
-            <img src="curipod.png" class="card-logo">
+            <img src="curipod.png" alt="Curipod" class="card-logo">
             <h3 class="card-title">Curipod</h3>
             <span class="card-category">AI Lesson Generator</span>
             <div class="qr-container" id="qr2"></div>
@@ -233,7 +248,7 @@ body {
         </div>
 
         <div class="qr-card card-3">
-            <img src="canva.png" class="card-logo">
+            <img src="canva.png" alt="Canva" class="card-logo">
             <h3 class="card-title">Canvas AI</h3>
             <span class="card-category">LMS + AI Tools</span>
             <div class="qr-container" id="qr3"></div>
@@ -241,7 +256,7 @@ body {
         </div>
 
         <div class="qr-card card-4">
-            <img src="plickers.png" class="card-logo">
+            <img src="plickers.png" alt="Plickers" class="card-logo">
             <h3 class="card-title">Plickers</h3>
             <span class="card-category">Real-time Assessment</span>
             <div class="qr-container" id="qr4"></div>
@@ -249,7 +264,7 @@ body {
         </div>
 
         <div class="qr-card card-5">
-            <img src="diffit.png" class="card-logo">
+            <img src="diffit.png" alt="Diffit" class="card-logo">
             <h3 class="card-title">Diffit</h3>
             <span class="card-category">Differentiated Content</span>
             <div class="qr-container" id="qr5"></div>
@@ -257,7 +272,7 @@ body {
         </div>
 
         <div class="qr-card card-6">
-            <img src="majecschool.png" class="card-logo">
+            <img src="majecschool.png" alt="Magic School" class="card-logo">
             <h3 class="card-title">Magic School</h3>
             <span class="card-category">Teacher AI Assistant</span>
             <div class="qr-container" id="qr6"></div>
@@ -265,9 +280,9 @@ body {
         </div>
 
         <div class="qr-card card-7">
-            <img src="merge.png" class="card-logo">
+            <img src="merge.png" alt="Merge Cube" class="card-logo">
             <h3 class="card-title">Merge Cube</h3>
-            <span class="card-category">AR Learning</span>
+            <span class="card-category">AR Learning Experience</span>
             <div class="qr-container" id="qr7"></div>
             <a href="https://mergecube.com" target="_blank" class="card-link">mergecube.com</a>
         </div>
@@ -275,29 +290,29 @@ body {
 
     <footer class="footer-section">
         <div class="presenter-item">
-            <div class="presenter-name">أ. أميرة العطاس</div>
-            <div class="presenter-role">مقدمة الورشة</div>
+            <div class="presenter-name">Ms. Amira Alattas</div>
+            <div class="presenter-role">Presenter</div>
         </div>
         <div class="presenter-item">
-            <div class="presenter-name">أ. أمجاد مسفر</div>
-            <div class="presenter-role">مقدمة الورشة</div>
+            <div class="presenter-name">Ms. Amjad Mesefir</div>
+            <div class="presenter-role">Presenter</div>
         </div>
         <div class="presenter-item">
-            <div class="presenter-name">أ. أسماء قاضي</div>
-            <div class="presenter-role">مقدمة الورشة</div>
+            <div class="presenter-name">Ms. Asma Qazi</div>
+            <div class="presenter-role">Presenter</div>
         </div>
     </footer>
 </div>
 
 <script>
-/* ── Animated Title ── */
+/* ── Colorful Animated Title ── */
 const word = "CERTIFICATE";
 const colors = ['#e74c3c','#f39c12','#2ecc71','#3498db','#9b59b6','#e056fd','#fd79a8','#00b894','#e17055'];
 document.getElementById('certTitle').innerHTML = word.split('').map((l, i) => 
     `<span class="letter" style="color:${colors[i%colors.length]}">${l}</span>`
 ).join('');
 
-/* ── QR Codes ── */
+/* ── Generate QR Codes ── */
 const links = [
     {id:'qr1', url:'https://nearpod.com'},
     {id:'qr2', url:'https://curipod.com'},
@@ -311,8 +326,8 @@ const links = [
 links.forEach(link => {
     new QRCode(document.getElementById(link.id), {
         text: link.url,
-        width: 140,
-        height: 140,
+        width: 145,
+        height: 145,
         colorDark: "#2d3436",
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
