@@ -18,7 +18,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Decorative background elements */
 body::before{
   content:'';
   position:fixed;
@@ -43,7 +42,6 @@ body::after{
   z-index:0;
 }
 
-/* Floating shapes */
 .floating-shape{
   position:fixed;
   z-index:1;
@@ -67,14 +65,12 @@ body::after{
   border:4px solid #f0f0f0;
 }
 
-/* HEADER SECTION */
 .header-section{
   text-align:center;
   margin-bottom:40px;
   position:relative;
 }
 
-/* Decorative top corners */
 .decor-top-left, .decor-top-right{
   position:absolute;
   top:-20px;
@@ -85,7 +81,6 @@ body::after{
 .decor-top-left{left:-20px;}
 .decor-top-right{right:-20px;transform:scaleX(-1);}
 
-/* Logo and Title */
 .logo-section{
   display:flex;
   align-items:center;
@@ -95,8 +90,9 @@ body::after{
 }
 
 .kids-gate-logo{
-  width:90px;
-  height:90px;
+  width:100px;
+  height:100px;
+  object-fit:contain;
   animation:bounce 2s ease-in-out infinite;
 }
 @keyframes bounce{
@@ -126,7 +122,6 @@ body::after{
   font-weight:600;
 }
 
-/* CERTIFICATE TITLE */
 .certificate-title{
   font-family:'Fredoka One',cursive;
   font-size:clamp(36px,6vw,56px);
@@ -177,7 +172,6 @@ body::after{
   text-transform:uppercase;
 }
 
-/* Decorative line */
 .decor-line{
   height:4px;
   background:linear-gradient(90deg, 
@@ -202,7 +196,6 @@ body::after{
 .decor-line::before{left:-30px;}
 .decor-line::after{right:-30px;}
 
-/* Workshop info banner */
 .workshop-banner{
   display:inline-block;
   background:linear-gradient(135deg, #6ab04c 0%, #7dc55a 100%);
@@ -228,7 +221,6 @@ body::after{
   font-size:15px;
 }
 
-/* SECTION DIVIDER */
 .section-divider{
   display:flex;
   align-items:center;
@@ -250,7 +242,6 @@ body::after{
   padding:0 20px;
 }
 
-/* QR GRID */
 .qr-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -286,7 +277,6 @@ body::after{
   border-color:transparent;
 }
 
-/* Color themes for cards */
 .card-1::before{background:linear-gradient(90deg, #e74c3c, #fd79a8);}
 .card-2::before{background:linear-gradient(90deg, #f39c12, #f1c40f);}
 .card-3::before{background:linear-gradient(90deg, #3498db, #74b9ff);}
@@ -295,13 +285,20 @@ body::after{
 .card-6::before{background:linear-gradient(90deg, #fdcb6e, #e17055);}
 .card-7::before{background:linear-gradient(90deg, #00b894, #00cec9);}
 
-.card-emoji{
-  font-size:42px;
-  margin-bottom:10px;
+/* شعار الموقع بدلاً من الإيموجي */
+.card-logo{
+  width:80px;
+  height:80px;
+  object-fit:contain;
+  margin:0 auto 10px;
   display:block;
-  animation:emojiFloat 3s ease-in-out infinite;
+  animation:logoFloat 3s ease-in-out infinite;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  background:white;
+  border-radius:15px;
+  padding:8px;
 }
-@keyframes emojiFloat{
+@keyframes logoFloat{
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-8px);}
 }
@@ -398,7 +395,6 @@ body::after{
 .card-7 .card-link{color:#16a085;}
 .card-7 .card-link:hover{background:#16a085;}
 
-/* FOOTER */
 .footer-section{
   background:linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius:20px;
@@ -444,7 +440,6 @@ body::after{
   background:linear-gradient(180deg, transparent, #dfe6e9, transparent);
 }
 
-/* Responsive */
 @media (max-width:768px){
   .page{padding:25px 20px;}
   .logo-section{flex-direction:column;text-align:center;}
@@ -469,7 +464,6 @@ body::after{
   <!-- HEADER -->
   <div class="header-section">
     
-    <!-- Decorative corners -->
     <div class="decor-top-left">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="10" y="70" width="70" height="14" rx="3" fill="#9b59b6"/>
@@ -495,32 +489,8 @@ body::after{
       </svg>
     </div>
 
-    <!-- Logo and Brand -->
     <div class="logo-section">
-      <div class="kids-gate-logo">
-        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="60" cy="106" rx="48" ry="8" fill="#d5e8a0"/>
-          <rect x="18" y="54" width="84" height="46" rx="4" fill="#6ab04c"/>
-          <rect x="23" y="59" width="74" height="39" rx="3" fill="#7dc55a"/>
-          <rect x="46" y="71" width="28" height="24" rx="14" fill="#30336b"/>
-          <rect x="50" y="77" width="20" height="18" rx="10" fill="#22a6b3" opacity="0.7"/>
-          <rect x="28" y="65" width="15" height="15" rx="7.5" fill="#f9ca24"/>
-          <rect x="77" y="65" width="15" height="15" rx="7.5" fill="#f9ca24"/>
-          <rect x="10" y="40" width="30" height="54" rx="3" fill="#5a9a40"/>
-          <rect x="10" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <rect x="21" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <rect x="32" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <rect x="80" y="40" width="30" height="54" rx="3" fill="#5a9a40"/>
-          <rect x="80" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <rect x="91" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <rect x="102" y="33" width="8" height="12" rx="2" fill="#5a9a40"/>
-          <line x1="25" y1="8" x2="25" y2="36" stroke="#30336b" stroke-width="2.5"/>
-          <polygon points="25,8 40,16 25,24" fill="#e056fd"/>
-          <line x1="95" y1="8" x2="95" y2="36" stroke="#30336b" stroke-width="2.5"/>
-          <polygon points="95,8 110,16 95,24" fill="#f0932b"/>
-          <text x="52" y="22" font-size="13" fill="#f9ca24">★</text>
-        </svg>
-      </div>
+      <img src="logo.png" alt="Kids Gate Logo" class="kids-gate-logo">
       <div class="brand-info">
         <div class="brand-name">Kids Gate</div>
         <div class="brand-subtitle">Kindergarten & Early Childhood</div>
@@ -528,7 +498,6 @@ body::after{
       </div>
     </div>
 
-    <!-- Certificate Title -->
     <div class="certificate-title" id="certTitle"></div>
     
     <div class="subtitle-box">
@@ -552,11 +521,12 @@ body::after{
     <div class="divider-line"></div>
   </div>
 
-  <!-- QR Grid -->
+  <!-- QR Grid - مع شعارات المواقع الرسمية -->
   <div class="qr-grid">
 
     <div class="qr-card card-1">
-      <span class="card-emoji">🎬</span>
+      <img src="https://logo.clearbit.com/nearpod.com" alt="Nearpod" class="card-logo" 
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🎬</text></svg>'">
       <div class="card-title">Nearpod</div>
       <div class="card-category">Interactive Lessons</div>
       <div class="qr-container" id="qr1"></div>
@@ -564,7 +534,8 @@ body::after{
     </div>
 
     <div class="qr-card card-2">
-      <span class="card-emoji">🦉</span>
+      <img src="https://logo.clearbit.com/curipod.com" alt="Curipod" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🦉</text></svg>'">
       <div class="card-title">Curipod</div>
       <div class="card-category">AI Lesson Generator</div>
       <div class="qr-container" id="qr2"></div>
@@ -572,7 +543,8 @@ body::after{
     </div>
 
     <div class="qr-card card-3">
-      <span class="card-emoji">🤖</span>
+      <img src="https://logo.clearbit.com/instructure.com" alt="Canvas" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🤖</text></svg>'">
       <div class="card-title">Canvas AI</div>
       <div class="card-category">LMS + AI Tools</div>
       <div class="qr-container" id="qr3"></div>
@@ -580,7 +552,8 @@ body::after{
     </div>
 
     <div class="qr-card card-4">
-      <span class="card-emoji">📱</span>
+      <img src="https://logo.clearbit.com/plickers.com" alt="Plickers" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>📱</text></svg>'">
       <div class="card-title">Plickers</div>
       <div class="card-category">Real-time Assessment</div>
       <div class="qr-container" id="qr4"></div>
@@ -588,7 +561,8 @@ body::after{
     </div>
 
     <div class="qr-card card-5">
-      <span class="card-emoji">✨</span>
+      <img src="https://logo.clearbit.com/diffit.me" alt="Diffit" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>✨</text></svg>'">
       <div class="card-title">Diffit</div>
       <div class="card-category">Differentiated Content</div>
       <div class="qr-container" id="qr5"></div>
@@ -596,7 +570,8 @@ body::after{
     </div>
 
     <div class="qr-card card-6">
-      <span class="card-emoji">🪄</span>
+      <img src="https://logo.clearbit.com/magicschool.ai" alt="Magic School AI" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🪄</text></svg>'">
       <div class="card-title">Magic School AI</div>
       <div class="card-category">Teacher AI Assistant</div>
       <div class="qr-container" id="qr6"></div>
@@ -604,7 +579,8 @@ body::after{
     </div>
 
     <div class="qr-card card-7">
-      <span class="card-emoji">🧊</span>
+      <img src="https://logo.clearbit.com/mergecube.com" alt="Merge Cube" class="card-logo"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🧊</text></svg>'">
       <div class="card-title">Merge Cube</div>
       <div class="card-category">AR Learning Object</div>
       <div class="qr-container" id="qr7"></div>
